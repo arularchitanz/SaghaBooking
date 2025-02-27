@@ -1,0 +1,1057 @@
+/* ✅ General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.logo {
+    width: 70px;
+}
+
+/* ✅ Navbar */
+.navbar {
+    background: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.vehicle-logos {
+    display: flex;
+    gap: 15px;
+    padding-left: 15px;
+    border-left: 1px solid #e2e8f0;
+}
+
+.menu-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.main-logo {
+    height: 30px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-with-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    width: 35px;
+    height: 35px;
+    padding: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1.5px solid #e2e8f0;
+    transition: all 0.3s ease;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 10px;
+    color: #4a5568;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.help-text {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #4a5568;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.help-text i {
+    color: #4a90e2;
+}
+
+.language-switch {
+    padding: 6px 12px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #4a5568;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-switch:hover {
+    border-color: #4a90e2;
+}
+
+.login-btn {
+    padding: 8px 20px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #357abd;
+    transform: translateY(-1px);
+}
+
+/* Updated responsive styles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .logo-container {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .vehicle-logos {
+        padding-left: 0;
+        border-left: none;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .menu-right {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-item {
+        margin: 5px;
+    }
+
+    .main-logo {
+        height: 25px;
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo-text {
+        font-size: 9px;
+    }
+
+    .help-text {
+        font-size: 12px;
+    }
+
+    .language-switch {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .login-btn {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .vehicle-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo-with-text {
+        flex: 0 0 auto;
+        margin: 5px;
+    }
+}
+
+/* ✅ Login/Logout Button Styles */
+.logout-btn {
+    background: #E53935;
+    color: white;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+/* ✅ Form Container */
+.container {
+    background-color: #f8fafc;
+    padding: 60px 40px;
+}
+
+/* ✅ Card-Style Form */
+.form-card {
+    background: rgb(201, 19, 19);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    text-align: center;
+}
+
+.form-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-container h2 {
+    color: #1a202c;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    gap: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #2d3748;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #718096;
+    font-size: 14px;
+}
+
+select {
+    color: #718096;
+}
+
+select option:first-child {
+    color: #718096;
+}
+
+select option {
+    color: #2d3748;
+}
+
+/* Form validation styles */
+.ng-touched.ng-invalid {
+    border-color: #fc8181;
+}
+
+.ng-touched.ng-valid {
+    border-color: #68d391;
+}
+
+.error-message {
+    color: #e53e3e;
+    font-size: 0.8em;
+    margin-top: 4px;
+}
+
+/* Phone input specific styling */
+.phone-input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.country-code {
+    padding: 12px 16px;
+    background: #f7fafc;
+    border-right: 1px solid #e2e8f0;
+    color: #2d3748;
+    font-weight: 500;
+    min-width: 60px;
+    text-align: center;
+}
+
+.phone-input-container input {
+    border: none;
+    border-radius: 0;
+    flex: 1;
+}
+
+.phone-input-container:focus-within {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+/* Textarea specific styling */
+textarea {
+    min-height: 100px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+    width: 100%;
+    max-width: 200px;
+    background: #4299e1;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background: #3182ce;
+    transform: translateY(-1px);
+}
+
+button[type="submit"]:disabled {
+    background: #cbd5e0;
+    cursor: not-allowed;
+}
+
+/* ✅ Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    color: #4a5568;
+    font-size: 0.9em;
+    background: transparent;
+}
+
+footer a {
+    color: #3182ce;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #2c5282;
+}
+
+/* ✅ Mobile Responsive */
+@media screen and (max-width: 1200px) {
+    .form-container {
+        max-width: 95%;
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .form-group {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+    
+    .row {
+        margin: 0;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .hero-section {
+        font-size: 16px;
+        padding: 60px 10px;
+    }
+
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.main-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-with-text:hover {
+    transform: translateY(-2px);
+}
+
+.logo-with-text:hover .logo {
+    border-color: #4a90e2;
+    box-shadow: 0 4px 6px rgba(74, 144, 226, 0.15);
+}
+
+.logo-with-text:hover .logo-text {
+    color: #4a90e2;
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 60px 80px;
+    background: #ffffff;
+}
+
+.feature-item {
+    padding: 30px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.feature-item i {
+    font-size: 2.5em;
+    color: #2b6cb0;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    color: #1a202c;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.feature-item p {
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* Enhanced Split Layout */
+.split-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8fafc;
+}
+
+/* Enhanced Left Side */
+.left-side {
+    flex: 0 0 40%;
+    background: linear-gradient(135deg, 
+                rgba(0, 0, 0, 0.75), 
+                rgba(0, 0, 0, 0.6)), 
+                url('../../assets/BackgroundTravelImage.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+    height: 100vh; /* Ensures it covers the full viewport height */
+    padding: 60px;
+}
+
+
+/* Enhanced Welcome Content */
+.welcome-content {
+    text-align: center;
+    color: white;
+    max-width: 500px;
+}
+
+.brand-logo {
+    margin-bottom: 40px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.brand-logo img {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.welcome-content h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    background: linear-gradient(45deg, #ffffff, #f0f0f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.welcome-content p {
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Enhanced Features */
+.welcome-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.feature i {
+    font-size: 1.2em;
+    color: #4CAF50;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.feature span {
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/* Enhanced Right Side */
+.right-side {
+    flex: 0 0 60%;
+    margin-left: 40%;
+    overflow-y: auto;
+    background: #f8fafc;  /* Light blue-gray background */
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;  /* Added padding for better spacing */
+}
+
+/* Enhanced Form Header */
+.form-header {
+    margin-bottom: 40px;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.form-header h2 {
+    font-size: 2.5em;
+    color: #1a202c;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.form-header p {
+    color: #4a5568;
+    font-size: 1.1em;
+}
+
+/* Enhanced Form Container */
+.form-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+    flex: 1;
+}
+
+/* Enhanced Form Fields */
+.form-group {
+    margin: 0 15px 25px;
+    width: calc(33.333% - 30px);
+}
+
+label {
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+input:hover, select:hover, textarea:hover {
+    border-color: #cbd5e0;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+    outline: none;
+}
+
+/* Enhanced Submit Button */
+button[type="submit"] {
+    background: linear-gradient(45deg, #4299e1, #3182ce);
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 30px auto 0;
+    min-width: 200px;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.25);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Responsive Design */
+@media screen and (max-width: 1200px) {
+    .left-side {
+        flex: 0 0 35%;
+        width: 35%;
+    }
+    .right-side {
+        flex: 0 0 65%;
+        margin-left: 35%;
+    }
+    .form-container {
+        max-width: 95%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .split-container {
+        flex-direction: column;
+    }
+    .left-side {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        padding: 30px;
+    }
+    .right-side {
+        margin-left: 0;
+        padding: 30px;
+    }
+    .form-group {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+    .welcome-content h1 {
+        font-size: 2.2em;
+    }
+}
+
+/* Form Styles */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+label {
+    color: #2d3748;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #2d3748;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+    outline: none;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+.error-message {
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+}
+
+.submit-btn {
+    width: 200px;
+    padding: 14px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 20px auto 0;
+}
+
+.submit-btn:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+/* Service Type Container Styling */
+.service-type-container {
+    background: rgba(255, 255, 255, 0.95);  /* Slightly transparent white */
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.service-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.service-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 40px;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 160px;
+}
+
+.service-btn i {
+    font-size: 24px;
+    color: #4a90e2;
+    transition: all 0.3s ease;
+}
+
+.service-btn span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.service-btn:hover {
+    background: #f8fafc;
+    border-color: #4a90e2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.1);
+}
+
+.service-btn.active {
+    background: #4a90e2;
+    border-color: #4a90e2;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+}
+
+.service-btn.active i,
+.service-btn.active span {
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .service-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .service-btn {
+        width: 100%;
+        padding: 15px 20px;
+    }
+}
+
+/* Add these new styles for error messages and footer */
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid,
+textarea.ng-touched.ng-invalid {
+    border-color: #dc3545;
+}
+
+/* Footer positioning */
+.footer-container {
+    position: relative;
+    width: 60%;
+    margin-left: 40%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer {
+    color: #4a5568;
+    font-size: 14px;
+}
+
+footer a {
+    color: #3182ce;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #2c5282;
+}
+
+/* Update placeholder styles */
+input::placeholder,
+textarea::placeholder {
+    color: #a0aec0;
+    font-size: 14px;
+}
+
+/* Disable button styles */
+button[type="submit"]:disabled {
+    background: #cbd5e0;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Enhanced Enquiry Form Header */
+.enquiry-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    /* padding: 20px 0; */
+}
+
+.enquiry-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2d3748;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+.header-underline {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #4a90e2, #357abd);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Animation for header */
+.enquiry-header h2 {
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.header-underline {
+    animation: widthGrow 0.6s ease-out 0.3s forwards;
+    width: 0;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes widthGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 80px;
+    }
+}
+
+/* Card Container Styles */
+.card-container {
+    padding: 20px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08),
+                0 8px 16px rgba(0, 0, 0, 0.03);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Form Container - Add contrast */
+.booking-form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
