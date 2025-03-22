@@ -1,51 +1,17 @@
-<header><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></header>
+<header>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</header>
 
 
 <div class="split-container">
-    <!-- Left Side - Welcome Section -->
-    <div class="left-side">
-        <div class="welcome-content">
-            <h1>Welcome SAGHA</h1>
-            <p>Your journey to comfort and luxury begins here</p>
-            <div class="welcome-features">
-                <div class="feature">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Safe & Secure Travel</span>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-clock"></i>
-                    <span>24/7 Customer Support</span>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-star"></i>
-                    <span>Premium Fleet Services</span>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <span>Pan India Coverage</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Right Side - Form Section -->
     <div class="right-side">
-        <div class="navbar">
+        <div class="navbar" style="position: sticky; top: 0; z-index: 1000; background-color: white;">
             <div class="logo-container">
                 <img [src]="'./assets/Logo.png'" class="main-logo" alt="Real Coach">
-                <div class="vehicle-logos">
-                    <div class="logo-with-text">
-                        <img [src]="'./assets/Blue Bus.png'" class="logo" alt="Bus">
-                        <span class="logo-text">Bus</span>
-                    </div>
-                    <div class="logo-with-text">
-                        <img [src]="'./assets/Blue Bus.png'" class="logo" alt="Van">
-                        <span class="logo-text">Van</span>
-                    </div>
-                    <div class="logo-with-text">
-                        <img [src]="'./assets/Blue Bus.png'" class="logo" alt="Camper Van">
-                        <span class="logo-text">Camper Van</span>
-                    </div>
+                <div class="logo-text">
+                    <h1>Welcome Sagha!..</h1>
+                    <p>Your comfort and luxury journey begins here...</p>
                 </div>
             </div>
             <div class="menu-right">
@@ -65,131 +31,235 @@
                 </div>
             </div>
         </div>
-        <div class="enquiry-header">
-            <h2>Enquiry Form</h2>
-            <div class="header-underline"></div>
-        </div>
-        <div class="service-type-container">
-            <div class="service-buttons">
-                <button class="service-btn" [class.active]="selectedService === 'local'" (click)="selectService('local')">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>LOCAL</span>
-                </button>
-                <button class="service-btn" [class.active]="selectedService === 'outstation'" (click)="selectService('outstation')">
-                    <i class="fas fa-route"></i>
-                    <span>OUTSTATION</span>
-                </button>
-                <button class="service-btn" [class.active]="selectedService === 'event'" (click)="selectService('event')">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>EVENT</span>
-                </button>
-            </div>
-            <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
-                <!-- Row 1: Personal Information -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" formControlName="name" placeholder="Name">
-                        <div class="error-message" *ngIf="bookingForm.get('name')?.touched && bookingForm.get('name')?.errors?.['required']">
-                            Name is required
+        <div class="welcome-section">
+            <div class="welcome-content">
+                <div class="welcome-features-container">
+                    <div class="welcome-features">
+                        <div class="feature-row">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="feature-details">
+                                    <h3>Safe & Secure Travel</h3>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="feature-details">
+                                    <h3>24/7 Customer Support</h3>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="feature-details">
+                                    <h3>Premium Fleet Services</h3>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                </div>
+                                <div class="feature-details">
+                                    <h3>Pan India Coverage</h3>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" formControlName="phoneNo" placeholder="Phone No">
-                        <div class="error-message" *ngIf="bookingForm.get('phoneNo')?.touched && bookingForm.get('phoneNo')?.errors">
-                            <span *ngIf="bookingForm.get('phoneNo')?.errors?.['required']">Phone number is required</span>
-                            <span *ngIf="bookingForm.get('phoneNo')?.errors?.['pattern']">Please enter valid 10-digit number</span>
+                        <div class="enquiry-header">
+                            <h2>Enquiry Form</h2>
+                            <div class="header-underline"></div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" formControlName="email" placeholder="Email">
-                        <div class="error-message" *ngIf="bookingForm.get('email')?.touched && bookingForm.get('email')?.errors">
-                            <span *ngIf="bookingForm.get('email')?.errors?.['required']">Email is required</span>
-                            <span *ngIf="bookingForm.get('email')?.errors?.['email']">Please enter valid email</span>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Row 2: Travel Details -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" formControlName="origin" placeholder="Origin">
-                        <div class="error-message" *ngIf="bookingForm.get('origin')?.touched && bookingForm.get('origin')?.errors?.['required']">
-                            Origin is required
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" formControlName="destination" placeholder="Destination">
-                        <div class="error-message" *ngIf="bookingForm.get('destination')?.touched && bookingForm.get('destination')?.errors?.['required']">
-                            Destination is required
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="date" formControlName="travelDate" placeholder="Travel Date">
-                        <div class="error-message" *ngIf="bookingForm.get('travelDate')?.touched && bookingForm.get('travelDate')?.errors?.['required']">
-                            Travel date is required
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Row 3: Vehicle Details -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <select formControlName="selectVehicle">
-                            <option value="">--Select Vehicle--</option>
-                            <option value="Bus">BUS</option>
-                            <option value="Van">VAN</option>
-                            <option value="Camper Van">CAMPER VAN</option>
-                        </select>
-                        <div class="error-message" *ngIf="bookingForm.get('selectVehicle')?.touched && bookingForm.get('selectVehicle')?.errors?.['required']">
-                            Please select a vehicle
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <select formControlName="vehicleType">
-                            <option value="">--Select Vehicle Type--</option>
-                            <option value="AC">AC</option>
-                            <option value="Non AC">Non AC</option>
-                        </select>
-                        <div class="error-message" *ngIf="bookingForm.get('vehicleType')?.touched && bookingForm.get('vehicleType')?.errors?.['required']">
-                            Please select vehicle type
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" 
-                               formControlName="noOfPassengers" 
-                               placeholder="No Of Passengers" 
-                               maxlength="2" 
-                               (input)="onPhoneInput($event)">
-                        <div class="error-message" *ngIf="bookingForm.get('noOfPassengers')?.touched && bookingForm.get('noOfPassengers')?.errors">
-                            <span *ngIf="bookingForm.get('noOfPassengers')?.errors?.['required']">Number of passengers is required</span>
-                            <span *ngIf="bookingForm.get('noOfPassengers')?.errors?.['pattern']">Only numbers are allowed</span>
-                            <span *ngIf="bookingForm.get('noOfPassengers')?.errors?.['min']">Must be at least 1 passenger</span>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Row 4: Address and Remarks -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <textarea formControlName="pickupAddress" placeholder="Pickup Address"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <textarea formControlName="dropAddress" placeholder="Drop Address"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <textarea formControlName="remarks" placeholder="Remarks"></textarea>
-                    </div>
-                </div>
-    
-                <button type="submit" class="submit-btn" [disabled]="!bookingForm.valid">SUBMIT</button>
-            </form>
-        </div>
-        
-    </div>
-</div>
+                        <div class="service-type-container">
+                            <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
+                                <!-- Row 1: Personal Information -->
+                                <div class="form-row personal-info">
+                                    <div class="form-group">
+                                        <input type="text" formControlName="name" placeholder="Name">
+                                        <div class="error-message"
+                                            *ngIf="bookingForm.get('name')?.touched && bookingForm.get('name')?.errors?.['required']">
+                                            Name is required
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="phone-input-container">
+                                            <span class="phone-prefix">+91</span>
+                                            <input type="tel" 
+                                                   class="phone-input"
+                                                   formControlName="phoneNo" 
+                                                   placeholder="Phone No."
+                                                   maxlength="10" 
+                                                   (input)="onPhoneNumberInput($event)"
+                                                   (keypress)="onlyNumbers($event)">
+                                        </div>
+                                        <div class="error-message"
+                                             *ngIf="bookingForm.get('phoneNo')?.touched && bookingForm.get('phoneNo')?.errors">
+                                            <span *ngIf="bookingForm.get('phoneNo')?.errors?.['required']">
+                                                Phone number is required
+                                            </span>
+                                            <span *ngIf="bookingForm.get('phoneNo')?.errors?.['pattern']">
+                                                Please enter valid 10-digit number
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" formControlName="email" placeholder="Email">
+                                        <div class="error-message"
+                                            *ngIf="bookingForm.get('email')?.touched && bookingForm.get('email')?.errors">
+                                            <span *ngIf="bookingForm.get('email')?.errors?.['required']">
+                                                Email is required
+                                            </span>
+                                            <span *ngIf="bookingForm.get('email')?.errors?.['pattern']">
+                                                Please enter a valid email (e.g., name&#64;example.com)
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
 
-<div class="footer-container">
-    <footer>
-        <p>© 2025 All rights reserved. Powered By <a href="https://www.architanz.com" target="_blank">Architanz Technologies</a></p>
-    </footer>
+                                <!-- Row 2: Travel Details -->
+                                <div class="form-row travel-info">
+                                    <div class="form-group">
+                                        <input type="text" formControlName="origin" placeholder="Origin">
+                                        <div class="error-message"
+                                            *ngIf="bookingForm.get('origin')?.touched && bookingForm.get('origin')?.errors?.['required']">
+                                            Origin is required
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" formControlName="destination" placeholder="Destination">
+                                        <div class="error-message"
+                                            *ngIf="bookingForm.get('destination')?.touched && bookingForm.get('destination')?.errors?.['required']">
+                                            Destination is required
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="date" 
+                                               formControlName="travelDate"
+                                               [min]="minDate"
+                                               [ngStyle]="{'text-transform': 'uppercase'}"
+                                               (change)="onDateChange($event)">
+                                        <div class="error-message"
+                                            *ngIf="bookingForm.get('travelDate')?.touched && bookingForm.get('travelDate')?.errors?.['required']">
+                                            Travel date is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 3: Vehicle Details -->
+                                <div class="form-row vehicle-info">
+                                    <div class="form-group">
+                                        <select formControlName="selectVehicle">
+                                            <option value="">Select Vehicle</option>
+                                            <option value="Bus">BUS</option>
+                                            <option value="Van">VAN</option>
+                                            <option value="Camper Van">CAMPER VAN</option>
+                                        </select>
+                                        <div class="error-message"
+                                            *ngIf="bookingForm.get('selectVehicle')?.touched && bookingForm.get('selectVehicle')?.errors?.['required']">
+                                            Please select a vehicle
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <select formControlName="vehicleType">
+                                            <option value="">Select Vehicle Type</option>
+                                            <option value="AC">AC</option>
+                                            <option value="Non AC">Non AC</option>
+                                        </select>
+                                        <div class="error-message"
+                                            *ngIf="bookingForm.get('vehicleType')?.touched && bookingForm.get('vehicleType')?.errors?.['required']">
+                                            Please select vehicle type
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" 
+                                               formControlName="noOfPassengers"
+                                               placeholder="No. of Passengers" 
+                                               maxlength="2"
+                                               (input)="onPassengersInput($event)"
+                                               (keypress)="onlyNumbers($event)">
+                                        <div class="error-message"
+                                            *ngIf="bookingForm.get('noOfPassengers')?.touched && bookingForm.get('noOfPassengers')?.errors">
+                                            <span *ngIf="bookingForm.get('noOfPassengers')?.errors?.['required']">Number
+                                                of passengers is required</span>
+                                            <span *ngIf="bookingForm.get('noOfPassengers')?.errors?.['pattern']">Only
+                                                numbers are allowed</span>
+                                            <span *ngIf="bookingForm.get('noOfPassengers')?.errors?.['min']">Must be at
+                                                least 1 passenger</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Row 4: Address and Remarks -->
+                                <div class="form-row address-info">
+                                    <div class="form-group">
+                                        <textarea formControlName="pickupAddress"
+                                            placeholder="Pickup Address"></textarea>
+                                        <div class="error-message"
+                                            *ngIf="bookingForm.get('pickupAddress')?.touched && bookingForm.get('pickupAddress')?.errors">
+                                            <span *ngIf="bookingForm.get('pickupAddress')?.errors?.['required']">
+                                                Pickup address is required
+                                            </span>
+                                            <span *ngIf="bookingForm.get('pickupAddress')?.errors?.['minlength']">
+                                                Address must be at least 10 characters
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea formControlName="dropAddress" 
+                                            placeholder="Drop Address"></textarea>
+                                        <div class="error-message"
+                                            *ngIf="bookingForm.get('dropAddress')?.touched && bookingForm.get('dropAddress')?.errors">
+                                            <span *ngIf="bookingForm.get('dropAddress')?.errors?.['required']">
+                                                Drop address is required
+                                            </span>
+                                            <span *ngIf="bookingForm.get('dropAddress')?.errors?.['minlength']">
+                                                Address must be at least 10 characters
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea formControlName="remarks" placeholder="Remarks"></textarea>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="submit-btn" [disabled]="!bookingForm.valid">SUBMIT</button>
+                            </form>
+                            <div class="footer-container">
+                                <footer>
+                                    <p>© 2025 All rights reserved. Powered By <a href="https://www.architanz.com"
+                                            target="_blank">Architanz
+                                            Technologies</a></p>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-container">
+        <div class="whatsapp-popup">
+            <div class="whatsapp-popup-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                <span>Welcome Sagha!..</span>
+            </div>
+            <div class="whatsapp-popup-body">
+                <p>Hello, how can we help you?வணக்கம், நான் உங்களுக்கு எவ்வாறு உதவ வேண்டும்?</p>
+                <div class="whatsapp-input-container">
+                    <textarea class="whatsapp-message" placeholder="Type your message here..." [(ngModel)]="whatsappMessage" [ngModelOptions]="{standalone: true}"></textarea>
+                    <button class="whatsapp-send-btn" style="margin-top: 20px;" (click)="sendWhatsAppMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <a class="whatsapp-float">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 </div>

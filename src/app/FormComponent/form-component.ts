@@ -12,22 +12,30 @@ export class FormComponent {
   isLoggedIn: boolean = false;
   selectedService: string = 'local';
   googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfZloSAtQKDW883J-Xn3cFBeRYpJOHFjowTZORNlpVAC6cbAQ/formResponse';
+  whatsappMessage: string = '';
+  minDate: string;
 
   constructor(private fb: FormBuilder) {
+    // Set minimum date to today
+    const today = new Date();
+    this.minDate = today.toISOString().split('T')[0];
+    
     this.bookingForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [
+        Validators.required, 
+        Validators.email,
+        Validators.pattern('^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$')
+      ]],
       name: ['', [Validators.required, Validators.minLength(3)]],
       phoneNo: ['', [
-        Validators.required, 
-        Validators.pattern('^[0-9]*$'),
-        Validators.minLength(10),
-        Validators.maxLength(10)
+        Validators.required,
+        Validators.pattern('^[0-9]{10}$')
       ]],
       origin: ['', Validators.required],
       destination: ['', Validators.required],
-      travelDate: ['', Validators.required],
-      pickupAddress: ['', Validators.required],
-      dropAddress: ['', Validators.required],
+      travelDate: ['', [Validators.required]],
+      pickupAddress: ['', [Validators.required, Validators.minLength(10)]],
+      dropAddress: ['', [Validators.required, Validators.minLength(10)]],
       noOfPassengers: ['', [
         Validators.required, 
         Validators.min(1),
@@ -168,8 +176,59 @@ export class FormComponent {
     return field ? field.invalid && (field.dirty || field.touched) : false;
   }
 
-  onPhoneInput(event: Event) {
+  onPhoneNumberInput(event: Event) {
     const input = event.target as HTMLInputElement;
-    input.value = input.value.replace(/[^0-9]/g, '');
+    let value = input.value.replace(/\D/g, ''); // Remove non-digits
+    
+    if (value.length > 10) {
+      value = value.slice(0, 10); // Limit to 10 digits
+    }
+    
+    input.value = value;
+    this.bookingForm.get('phoneNo')?.setValue(value);
+  }
+
+  onlyNumbers(event: KeyboardEvent): boolean {
+    const charCode = event.which ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false; // Prevent non-numeric characters
+    }
+    return true;
+  }
+
+  getWhatsAppUrl(): string {
+    const phoneNumber = '918220336278';
+    const encodedMessage = encodeURIComponent(this.whatsappMessage || '');
+    return `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodedMessage}&type=phone_number&app_absent=0`;
+  }
+
+  sendWhatsAppMessage() {
+    if (this.whatsappMessage.trim()) {
+        const url = this.getWhatsAppUrl();
+        window.open(url, '_blank');
+        this.whatsappMessage = '';
+    }
+  }
+
+  onDateChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    const date = new Date(input.value);
+    if (date < new Date()) {
+        alert("Please select a valid future date.");
+        input.value = '';
+        this.bookingForm.get('travelDate')?.setValue('');
+    }
+  }
+
+  onPassengersInput(event: Event) {
+    const input = event.target as HTMLInputElement;
+    let value = input.value.replace(/\D/g, ''); // Remove non-digits
+    
+    if (value.length > 2) {
+      value = value.slice(0, 2); // Limit to 2 digits
+    }
+    
+    input.value = value;
+    this.bookingForm.get('noOfPassengers')?.setValue(value);
   }
 }
